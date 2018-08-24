@@ -1,0 +1,120 @@
+{
+  "udr": true,
+  "proxySettings": {
+    "port": 0
+  },
+  "mailSettings": {},
+  "maxRunningActivitiesPerJob": 5,
+  "maxRunningActivities": 5,
+  "ldapSettings": {
+    "enabled": false,
+    "useTls": false,
+    "userFilter": "(\u0026(objectClass\u003dposixAccount)(uid\u003d{USERNAME}))",
+    "displayNameAttribute": "cn",
+    "emailAttribute": "mail",
+    "enableGroups": true,
+    "groupFilter": "(\u0026(objectClass\u003dposixGroup)(memberUid\u003d{USERNAME}))",
+    "groupNameAttribute": "cn",
+    "autoImportUsers": true,
+    "defaultUserProfile": "READER",
+    "groupProfiles": []
+  },
+  "computablesAvailabilityMode": "EXPOSED_ONLY",
+  "globalCrossProjectBuildBehaviour": "STOP_AT_BOUNDARIES",
+  "noLoginMode": false,
+  "sessionsMaxTotalTimeHours": 0,
+  "sessionsMaxIdleTimeHours": 0,
+  "sparkSettings": {
+    "sparkEnabled": true,
+    "executionConfigs": [{"name": "default", "conf": []}],
+    "configForJupyter": "default"
+  },
+  "isAWSMarketplace": false,
+  "generateInitialPassword": false,
+  "pluginDevEnabled": false,
+  "hadoopSettings": {
+    "kerberosLoginEnabled": false
+  },
+  "hiveSettings": {
+    "defaultRecipesExecutionEngine": "HIVECLI_LOCAL",
+    "overrideDatabaseInLocalMetastore": false,
+    "hiveServer2Host": "127.0.0.1",
+    "hiveServer2Port": 10000,
+    "additionalUserToGrantAccessToWhenImpersonating": "hive",
+    "addWriteACLOnDataUsabilityACL": false,
+    "preCreateManagedDatasetFolderBeforeMetastoreSyncForHS2Recipes": true,
+    "addCompressionCommands": false,
+    "executionConfigs": []
+  },
+  "impalaSettings": {
+    "enabled": false,
+    "datanodes": [],
+    "port": 21050,
+    "useSimbaDriver": false,
+    "preCreateManagedDatasetFolderBeforeMetastoreSyncForDirectWriteRecipes": true,
+    "additionalUserToGrantAccessToWhenImpersonating": "impala"
+  },
+  "security": {
+    "hideVersionStringsWhenNotLogged": false,
+    "hideErrorStacks": false,
+    "secureCookies": false,
+    "secureSecretKeys": true,
+    "caseSensitiveLogins": true
+  },
+  "graphiteReportingDelay": 0,
+  "disableAutomaticTriggers": false,
+  "themeId": "laotseu",
+  "projectStatusList": [
+    {
+      "name": "Sandbox",
+      "color": "#4285F4"
+    },
+    {
+      "name": "Draft",
+      "color": "#77bec2"
+    },
+    {
+      "name": "In use",
+      "color": "#94BF51"
+    },
+    {
+      "name": "In production",
+      "color": "#ee874a"
+    },
+    {
+      "name": "Archived",
+      "color": "#CCCCCC"
+    }
+  ],
+  "homeMessages": [
+    {}
+  ],
+  "notifications": {
+    "notifyOnUserConnection": "ALL",
+    "notifyOnTaskStartAndStop": "ALL_WITH_ACCESS_TO_PROJECT"
+  },
+  "impersonation": {
+    "enabled": false,
+    "userRules": [],
+    "groupRules": []
+  },
+  "limits": {
+    "memSampleBytes": {
+      "soft": 104857600,
+      "hard": 524288000
+    },
+    "shakerMemTableBytes": {
+      "soft": -1,
+      "hard": 524288000
+    }
+  },
+  "defaultDatasetCreationSettings": {
+    "preferedStorageFormats": "CSV_ESCAPING_NOGZIP_FORHIVE,CSV_EXCEL_GZIP,PARQUET_HIVE"
+  },
+  "recipeEnginesPreferences": {
+    "forbiddenEngines": [],
+    "enginesPreferenceOrder": [],
+    "forbiddenByRecipeType": {},
+    "preferenceByRecipeType": {}
+  }
+}

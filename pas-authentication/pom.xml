@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tarotdt.pas</groupId>
+  <artifactId>pas-authentication</artifactId>
+  <version>0.0.1</version>
+  <name>backend</name>
+  <packaging>pom</packaging>
+  <description>tarot pas web backend.</description>
+   <modules>
+    <module>web</module>
+    <module>dataset-server</module>
+	<module>pas-eureka</module>
+   </modules>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.7.RELEASE</version>
+  </parent>
+  
+</project>

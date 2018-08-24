@@ -1,0 +1,18 @@
+{
+  "content": {
+    "licensee": {
+      "email": "",
+      "company": "",
+      "name": ""
+    },
+    "mode": "ON_PREMISE_DISCONNECTED",
+    "instanceId": "",
+    "licenseKind": "COMMUNITY",
+    "licenseId": "",
+    "properties": {},
+    "expiresOn": "20171206",
+    "communityEdition": "true"
+  },
+  "r1Sig": "QcbHME8sA/vtMHV95TluSA6+7M5+ISIMZr8vsSHPWLPRr0jV1/4q/BUpRrWda5ImSiIUlLwzgdtnjQpyc+frll08uHNcEBnP4dHHsx8khsIUyt2AlTEzB2dZITWShCvUhV91ULg8oW2F9sPoUNdt4KiiMlx9PXO9m1WUeVtBel0\u003d",
+  "r1Pub": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCSHO0CybtwqvSQacJ0/EGBv9uBiRMKAxZhrTZ9FmLQY+IYjpZ1vz9eIKNaIeSFyikWPnR/RfS0W/lw6gYfs/RCLQXvWSM5z1HVE2XklbXp8HhEmUQZXVzewYbpKltZXxvQJCCdiixMmSPp0Ky4VaITYBspA/d5LZHeyOks8WfDOQIDAQAB"
+}

@@ -1,0 +1,102 @@
+{
+  "db_scan_clustering": {
+    "epsilon": [
+      0.5
+    ],
+    "min_sample_ratio": 0.1,
+    "enabled": false
+  },
+  "spectral_clustering": {
+    "k": [
+      5, 3
+    ],
+    "affinity_rbf": false,
+    "affinity_nearest_neighbors": false,
+    "affinity_sigmoid": false,
+    "affinity_polynomial": true,
+    "gamma": [
+      1.0
+    ],
+    "coef0": 1.0,
+    "seed": 1337,
+    "enabled": false
+  },
+  "ward_clustering": {
+    "k": [
+      5, 3
+    ],
+    "enabled": false
+  },
+  "kmeans_clustering": {
+    "k": [
+      5,6,7,8,9
+    ],
+    "seed": 1337,
+    "n_jobs": 2,
+    "enabled": true
+  },
+  "mini_batch_kmeans_clustering": {
+    "k": [
+      5, 3
+    ],
+    "seed": 1337,
+    "enabled": false
+  },
+  "gmm_clustering": {
+    "k": [
+      5
+    ],
+    "max_iterations": 100,
+    "seed": 1337,
+    "enabled": false
+  },
+  "mllib_kmeans_clustering": {
+    "k": [
+      5
+    ],
+    "seed": 1337,
+    "max_iterations": 25,
+    "enabled": false
+  },
+  "mllib_gaussian_mixture_clustering": {
+    "k": [
+      5
+    ],
+    "seed": 1337,
+    "max_iterations": 25,
+    "enabled": false
+  },
+  "h2o_kmeans": {
+    "k": [
+      5
+    ],
+    "seed": 1337,
+    "max_iterations": 50,
+    "enabled": false
+  },
+  "two_step": {
+    "kmeans_k": 50,
+    "k": 5,
+    "seed": 1337,
+    "max_iterations": 30,
+    "enabled": false
+  },
+  "isolation_forest": {
+    "k": 2,
+    "n_estimators": 100,
+    "max_samples": 0.5,
+    "max_features": 1.0,
+    "contamination": 0.05,
+    "bootstrap": true,
+    "max_anomalies": 100,
+    "n_samples": 256,
+    "max_depth": 15,
+    "enabled": false
+  },
+  "metrics": {
+    "evaluationMetric": "SILHOUETTE",
+    "customEvaluationMetricGIB": true
+  },
+  "custom_python": [],
+  "custom_mllib": []
+}

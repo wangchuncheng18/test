@@ -1,0 +1,3115 @@
+2017-09-07 10:27:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "TEST" not found; SQL statement:
+select * from TEST [42102-193]
+2017-09-07 16:49:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO USER (USER_NAME,PASS_WORD) VALUE[*] ('liran','wowangle') "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into USER (USER_NAME,PASS_WORD) value ('liran','wowangle') [42001-193]
+2017-09-08 11:29:26 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-09-08 11:29:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+PRIMARY KEY""ID""[*]  INT(11) NOT NULL AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL ,
+""REAL_NAME""  VARCHAR(32) NULL ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL ,
+""PHONE""  VARCHAR(32) NOT NULL ,
+""EMAIL""  VARCHAR(255) NOT NULL ,
+""CORPORATE_NAME""  VARCHAR(255) NULL ,
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F'
+) "; expected "HASH, ("; SQL statement:
+CREATE TABLE `USER_INFO` (
+PRIMARY KEY`ID`  int(11) NOT NULL auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL ,
+`PHONE`  varchar(32) NOT NULL ,
+`EMAIL`  varchar(255) NOT NULL ,
+`CORPORATE_NAME`  varchar(255) NULL ,
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP,
+`DEL_STATE`  varchar(16) NOT NULL default 'F'
+) [42001-193]
+2017-09-08 11:31:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Unknown data type: "PRIMARY"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`ID` PRIMARY KEY int(11) NOT NULL auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL ,
+`PHONE`  varchar(32) NOT NULL ,
+`EMAIL`  varchar(255) NOT NULL ,
+`CORPORATE_NAME`  varchar(255) NULL ,
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP,
+`DEL_STATE`  varchar(16) NOT NULL default 'F'
+) [50004-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.command.Parser.parseColumnWithType(Parser.java:4080)
+	at org.h2.command.Parser.parseColumnForTable(Parser.java:3938)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5977)
+	at org.h2.command.Parser.parseCreate(Parser.java:4238)
+	at org.h2.command.Parser.parsePrepared(Parser.java:362)
+	at org.h2.command.Parser.parse(Parser.java:317)
+	at org.h2.command.Parser.parse(Parser.java:289)
+	at org.h2.command.Parser.prepareCommand(Parser.java:254)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 11:33:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+PRIMARY KEY""ID""[*]  INT(11)  PRIMARY KEY NOT NULL AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL ,
+""REAL_NAME""  VARCHAR(32) NULL ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL ,
+""PHONE""  VARCHAR(32) NOT NULL ,
+""EMAIL""  VARCHAR(255) NOT NULL ,
+""CORPORATE_NAME""  VARCHAR(255) NULL ,
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F'
+) "; expected "HASH, ("; SQL statement:
+CREATE TABLE `USER_INFO` (
+PRIMARY KEY`ID`  int(11)  primary key NOT NULL auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL ,
+`PHONE`  varchar(32) NOT NULL ,
+`EMAIL`  varchar(255) NOT NULL ,
+`CORPORATE_NAME`  varchar(255) NULL ,
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP,
+`DEL_STATE`  varchar(16) NOT NULL default 'F'
+) [42001-193]
+2017-09-08 11:33:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""ID""  INT(11)  PRIMARY KEY NOT NULL AUTO_INCREMENT[*],
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL ,
+""REAL_NAME""  VARCHAR(32) NULL ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL ,
+""PHONE""  VARCHAR(32) NOT NULL ,
+""EMAIL""  VARCHAR(255) NOT NULL ,
+""CORPORATE_NAME""  VARCHAR(255) NULL ,
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F'
+) "; expected "CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`ID`  int(11)  primary key NOT NULL auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL ,
+`PHONE`  varchar(32) NOT NULL ,
+`EMAIL`  varchar(255) NOT NULL ,
+`CORPORATE_NAME`  varchar(255) NULL ,
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP,
+`DEL_STATE`  varchar(16) NOT NULL default 'F'
+) [42001-193]
+2017-09-08 14:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL COMMENT '用户名',
+""PASS_WORD""  VARCHAR(128) NOT NULL COMMENT '密码',
+""REAL_NAME""  VARCHAR(32) NULL  COMMENT '真实姓名',
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL COMMENT '用户备注说明',
+""PHONE""  VARCHAR(32) NOT NULL COMMENT '电话',
+""EMAIL""  VARCHAR(255) NOT NULL COMMENT '邮箱',
+""CORPORATE_NAME""  VARCHAR(255) NULL COMMENT '公司名称',
+""USER_STATE""  INT(1)  NOT NULL DEFAULT 1 COMMENT '用户状态(1、正常，2、停用)',
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+""OPERATOR""  INT(11) NULL COMMENT '修改用户ID',
+""UPDATE_TIME""  TIMESTAMP NULL COMMENT '修改时间',
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F' COMMENT '是否删除' 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL COMMENT '用户名',
+`PASS_WORD`  varchar(128) NOT NULL COMMENT '密码',
+`REAL_NAME`  varchar(32) NULL  COMMENT '真实姓名',
+`DESCRIBE_TEXT`  varchar(2000) NULL COMMENT '用户备注说明',
+`PHONE`  varchar(32) NOT NULL COMMENT '电话',
+`EMAIL`  varchar(255) NOT NULL COMMENT '邮箱',
+`CORPORATE_NAME`  varchar(255) NULL COMMENT '公司名称',
+`USER_STATE`  int(1)  NOT NULL default 1 COMMENT '用户状态(1、正常，2、停用)',
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+`OPERATOR`  int(11) NULL COMMENT '修改用户ID',
+`UPDATE_TIME`  timestamp NULL COMMENT '修改时间',
+`DEL_STATE`  varchar(16) NOT NULL default 'F' COMMENT '是否删除' 
+) [42001-193]
+2017-09-08 14:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""GROUP_INFO"" (
+""GROUP_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""GROUP_NAME""  VARCHAR(128) NOT NULL COMMENT '分组名称',
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL COMMENT '分组备注说明',
+""CREATOR""  INT(11) NOT NULL COMMENT '创建用户ID',
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+""OPERATOR""  INT(11) NULL COMMENT '修改用户ID',
+""UPDATE_TIME""  TIMESTAMP NULL COMMENT '修改时间',
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F' COMMENT '是否删除' 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `GROUP_INFO` (
+`GROUP_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`GROUP_NAME`  varchar(128) NOT NULL COMMENT '分组名称',
+`DESCRIBE_TEXT`  varchar(2000) NULL COMMENT '分组备注说明',
+`CREATOR`  int(11) NOT NULL COMMENT '创建用户ID',
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+`OPERATOR`  int(11) NULL COMMENT '修改用户ID',
+`UPDATE_TIME`  timestamp NULL COMMENT '修改时间',
+`DEL_STATE`  varchar(16) NOT NULL default 'F' COMMENT '是否删除' 
+) [42001-193]
+2017-09-08 14:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_GROUP_INFO"" (
+""ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_ID""  INT(11) NOT NULL COMMENT '用户ID' , 
+""GROUP_ID""  INT(11) NOT NULL COMMENT '分组ID' ,
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_GROUP_INFO` (
+`ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_ID`  int(11) NOT NULL COMMENT '用户ID' , 
+`GROUP_ID`  int(11) NOT NULL COMMENT '分组ID' ,
+) [42001-193]
+2017-09-08 14:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""PROJECT_INFO"" (
+""PROJECT_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""PROJECT_NAME""  VARCHAR(128) NOT NULL COMMENT '项目ID' ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL COMMENT '项目备注说明',
+""IS_SHARE"" INT(1) NOT NULL DEFAULT 1 COMMENT '是否共享（1、不共享，2、共享）' ,
+""CREATOR""  INT(11) NOT NULL COMMENT '创建用户ID',
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+""OPERATOR""  INT(11) NULL COMMENT '修改用户ID',
+""UPDATE_TIME""  TIMESTAMP NULL COMMENT '修改时间',
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F' COMMENT '是否删除'
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `PROJECT_INFO` (
+`PROJECT_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`PROJECT_NAME`  varchar(128) NOT NULL COMMENT '项目ID' ,
+`DESCRIBE_TEXT`  varchar(2000) NULL COMMENT '项目备注说明',
+`IS_SHARE` int(1) NOT NULL default 1 COMMENT '是否共享（1、不共享，2、共享）' ,
+`CREATOR`  int(11) NOT NULL COMMENT '创建用户ID',
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+`OPERATOR`  int(11) NULL COMMENT '修改用户ID',
+`UPDATE_TIME`  timestamp NULL COMMENT '修改时间',
+`DEL_STATE`  varchar(16) NOT NULL default 'F' COMMENT '是否删除'
+) [42001-193]
+2017-09-08 14:11:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""POWER_INFO"" (
+""POWER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""CONTROL_TYPE""  VARCHAR(64) NOT NULL COMMENT '控制类型，如：项目填写project',
+""CONTROL_ID""  INT(11)  NOT NULL COMMENT '控制ID,如：项目填写PROJECT_ID',
+""EFFECT_TYPE""  VARCHAR(64) NOT NULL COMMENT '影响类型,如：用户填写user',
+""EFFECT_ID""  INT(11)  NOT NULL COMMENT '影响ID,如：用户填写USER_ID'
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `POWER_INFO` (
+`POWER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`CONTROL_TYPE`  varchar(64) NOT NULL COMMENT '控制类型，如：项目填写project',
+`CONTROL_ID`  int(11)  NOT NULL COMMENT '控制ID,如：项目填写PROJECT_ID',
+`EFFECT_TYPE`  varchar(64) NOT NULL COMMENT '影响类型,如：用户填写user',
+`EFFECT_ID`  int(11)  NOT NULL COMMENT '影响ID,如：用户填写USER_ID'
+) [42001-193]
+2017-09-08 14:13:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,     
+""PASS_WORD""  VARCHAR(128) NOT NULL ,    
+""REAL_NAME""  VARCHAR(32) NULL ,      
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL COMMENT '用户备注说明',
+""PHONE""  VARCHAR(32) NOT NULL COMMENT '电话',
+""EMAIL""  VARCHAR(255) NOT NULL COMMENT '邮箱',
+""CORPORATE_NAME""  VARCHAR(255) NULL COMMENT '公司名称',
+""USER_STATE""  INT(1)  NOT NULL DEFAULT 1 COMMENT '用户状态(1、正常，2、停用)',
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+""OPERATOR""  INT(11) NULL COMMENT '修改用户ID',
+""UPDATE_TIME""  TIMESTAMP NULL COMMENT '修改时间',
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F' COMMENT '是否删除' 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,--用户名
+`PASS_WORD`  varchar(128) NOT NULL ,--密码
+`REAL_NAME`  varchar(32) NULL ,--真实姓名
+`DESCRIBE_TEXT`  varchar(2000) NULL COMMENT '用户备注说明',
+`PHONE`  varchar(32) NOT NULL COMMENT '电话',
+`EMAIL`  varchar(255) NOT NULL COMMENT '邮箱',
+`CORPORATE_NAME`  varchar(255) NULL COMMENT '公司名称',
+`USER_STATE`  int(1)  NOT NULL default 1 COMMENT '用户状态(1、正常，2、停用)',
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+`OPERATOR`  int(11) NULL COMMENT '修改用户ID',
+`UPDATE_TIME`  timestamp NULL COMMENT '修改时间',
+`DEL_STATE`  varchar(16) NOT NULL default 'F' COMMENT '是否删除' 
+) [42001-193]
+2017-09-08 14:13:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL ,
+""REAL_NAME""  VARCHAR(32) NULL ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL COMMENT '用户备注说明',
+""PHONE""  VARCHAR(32) NOT NULL COMMENT '电话',
+""EMAIL""  VARCHAR(255) NOT NULL COMMENT '邮箱',
+""CORPORATE_NAME""  VARCHAR(255) NULL COMMENT '公司名称',
+""USER_STATE""  INT(1)  NOT NULL DEFAULT 1 COMMENT '用户状态(1、正常，2、停用)',
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+""OPERATOR""  INT(11) NULL COMMENT '修改用户ID',
+""UPDATE_TIME""  TIMESTAMP NULL COMMENT '修改时间',
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F' COMMENT '是否删除' 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL COMMENT '用户备注说明',
+`PHONE`  varchar(32) NOT NULL COMMENT '电话',
+`EMAIL`  varchar(255) NOT NULL COMMENT '邮箱',
+`CORPORATE_NAME`  varchar(255) NULL COMMENT '公司名称',
+`USER_STATE`  int(1)  NOT NULL default 1 COMMENT '用户状态(1、正常，2、停用)',
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+`OPERATOR`  int(11) NULL COMMENT '修改用户ID',
+`UPDATE_TIME`  timestamp NULL COMMENT '修改时间',
+`DEL_STATE`  varchar(16) NOT NULL default 'F' COMMENT '是否删除' 
+) [42001-193]
+2017-09-08 14:14:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL ,
+""REAL_NAME""  VARCHAR(32) NULL ,
+""DESCRIBE_TEXT""  VARCHAR(2000) NULL ,
+""PHONE""  VARCHAR(32) NOT NULL ,
+""EMAIL""  VARCHAR(255) NOT NULL ,
+""CORPORATE_NAME""  VARCHAR(255) NULL ,
+""USER_STATE""  INT(1)  NOT NULL DEFAULT 1,
+""CREATE_TIME""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
+""OPERATOR""  INT(11) NULL ,
+""UPDATE_TIME""  TIMESTAMP NULL ,
+""DEL_STATE""  VARCHAR(16) NOT NULL DEFAULT 'F'  
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL ,
+`REAL_NAME`  varchar(32) NULL ,
+`DESCRIBE_TEXT`  varchar(2000) NULL ,
+`PHONE`  varchar(32) NOT NULL ,
+`EMAIL`  varchar(255) NOT NULL ,
+`CORPORATE_NAME`  varchar(255) NULL ,
+`USER_STATE`  int(1)  NOT NULL default 1,
+`CREATE_TIME`  timestamp NOT NULL default CURRENT_TIMESTAMP ,
+`OPERATOR`  int(11) NULL ,
+`UPDATE_TIME`  timestamp NULL ,
+`DEL_STATE`  varchar(16) NOT NULL default 'F'  
+) [42001-193]
+2017-09-08 14:14:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL 
+) [42001-193]
+2017-09-08 14:14:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""USER_INFO"" (
+""USER_ID""  INT(11)  PRIMARY KEY USER_INFO[*] ID  AUTO_INCREMENT,
+""USER_NAME""  VARCHAR(128) NOT NULL ,
+""PASS_WORD""  VARCHAR(128) NOT NULL 
+) "; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE `USER_INFO` (
+`USER_ID`  int(11)  primary key USER_INFO ID  auto_increment,
+`USER_NAME`  varchar(128) NOT NULL ,
+`PASS_WORD`  varchar(128) NOT NULL 
+) [42001-193]
+2017-09-08 16:52:39 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Column "POSITION_NAME" not found; SQL statement:
+insert into user_info (
+			user_name,pass_word,real_name,describe_text,phone,email,corporate_name,position_name,job_name,address
+		) values (
+			?,?,?,?,?,
+			?,?,?,?,?
+		) [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:682)
+	at org.h2.command.Parser.parseColumn(Parser.java:878)
+	at org.h2.command.Parser.parseColumnList(Parser.java:862)
+	at org.h2.command.Parser.parseInsert(Parser.java:1062)
+	at org.h2.command.Parser.parsePrepared(Parser.java:413)
+	at org.h2.command.Parser.parse(Parser.java:317)
+	at org.h2.command.Parser.parse(Parser.java:289)
+	at org.h2.command.Parser.prepareCommand(Parser.java:254)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:1137)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy139.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:80)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy119.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:279)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:56)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy120.saveUserInfo(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.FileServiceImpl.userRegister(FileServiceImpl.java:169)
+	at com.tarotdt.pas.web.controller.UserController.smartDummySaveBaseJson(UserController.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-08 16:52:39 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Column "POSITION_NAME" not found; SQL statement:
+insert into user_info (
+			user_name,pass_word,real_name,describe_text,phone,email,corporate_name,position_name,job_name,address
+		) values (
+			?,?,?,?,?,
+			?,?,?,?,?
+		) [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:682)
+	at org.h2.command.Parser.parseColumn(Parser.java:878)
+	at org.h2.command.Parser.parseColumnList(Parser.java:862)
+	at org.h2.command.Parser.parseInsert(Parser.java:1062)
+	at org.h2.command.Parser.parsePrepared(Parser.java:413)
+	at org.h2.command.Parser.parse(Parser.java:317)
+	at org.h2.command.Parser.parse(Parser.java:289)
+	at org.h2.command.Parser.prepareCommand(Parser.java:254)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:1137)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy139.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:80)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy119.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:279)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:56)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy120.saveUserInfo(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.FileServiceImpl.userRegister(FileServiceImpl.java:169)
+	at com.tarotdt.pas.web.controller.UserController.smartDummySaveBaseJson(UserController.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-11 17:15:06 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (GROUP_INFO: CREATOR INT NOT NULL COMMENT STRINGDECODE('\u521b\u5efa\u7528\u6237ID'))"; SQL statement:
+INSERT INTO "PUBLIC"."GROUP_INFO"("GROUP_ID","GROUP_NAME","DESCRIBE_TEXT","CREATOR","CREATE_DATE","OPERATOR","UPDATE_DATE","DEL_STATE")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [22018-193]
+2017-09-11 17:15:06 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (GROUP_INFO: CREATOR INT NOT NULL COMMENT STRINGDECODE('\u521b\u5efa\u7528\u6237ID'))"; SQL statement:
+INSERT INTO "PUBLIC"."GROUP_INFO"("GROUP_ID","GROUP_NAME","DESCRIBE_TEXT","CREATOR","CREATE_DATE","OPERATOR","UPDATE_DATE","DEL_STATE")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [22018-193]
+2017-09-11 17:15:37 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "TIMESTAMP" constant ; SQL statement:
+INSERT INTO "PUBLIC"."GROUP_INFO"("GROUP_ID","GROUP_NAME","DESCRIBE_TEXT","CREATOR","CREATE_DATE","OPERATOR","UPDATE_DATE","DEL_STATE")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [22007-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:122)
+	at org.h2.value.Value.convertTo(Value.java:930)
+	at org.h2.table.Column.convert(Column.java:149)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:143)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:98)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:322)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2994)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1075)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:305)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:140)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:120)
+	... 16 more
+2017-09-11 17:15:37 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Cannot parse "TIMESTAMP" constant ; SQL statement:
+INSERT INTO "PUBLIC"."GROUP_INFO"("GROUP_ID","GROUP_NAME","DESCRIBE_TEXT","CREATOR","CREATE_DATE","OPERATOR","UPDATE_DATE","DEL_STATE")VALUES(?,?,?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8) [22007-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:122)
+	at org.h2.value.Value.convertTo(Value.java:930)
+	at org.h2.table.Column.convert(Column.java:149)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:143)
+	at org.h2.command.dml.Insert.update(Insert.java:114)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:98)
+	at org.h2.command.Command.executeUpdate(Command.java:258)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:160)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:146)
+	at org.h2.result.UpdatableRow.insertRow(UpdatableRow.java:322)
+	at org.h2.jdbc.JdbcResultSet.insertRow(JdbcResultSet.java:2994)
+	at org.h2.server.web.WebApp.editResult(WebApp.java:1075)
+	at org.h2.server.web.WebApp.process(WebApp.java:226)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.StringIndexOutOfBoundsException: String index out of range: 0
+	at java.lang.String.charAt(String.java:658)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:305)
+	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:140)
+	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:120)
+	... 16 more
+2017-09-12 09:44:40 jdbc[6]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:184)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:126)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 14 more
+2017-09-12 13:59:51 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-09-12 16:20:51 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-09-12 16:20:56 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-09-12 17:10:17 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "TASKID" not found; SQL statement:
+update  dataset_info set model=?,industry=?,description=?,taskId=?,tag=? where dataset_id=? [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:682)
+	at org.h2.command.Parser.readTableColumn(Parser.java:723)
+	at org.h2.command.Parser.parseUpdate(Parser.java:757)
+	at org.h2.command.Parser.parsePrepared(Parser.java:467)
+	at org.h2.command.Parser.parse(Parser.java:317)
+	at org.h2.command.Parser.parse(Parser.java:289)
+	at org.h2.command.Parser.prepareCommand(Parser.java:254)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy143.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:49)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy119.update(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.update(SqlSessionTemplate.java:295)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:59)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy122.smartDummySaveDataset(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.FileServiceImpl.smartDummySaveBaseJson(FileServiceImpl.java:124)
+	at com.tarotdt.pas.web.controller.ProcessController.smartDummySaveBaseJson(ProcessController.java:178)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:220)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:134)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:116)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:897)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:648)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:89)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2017-09-12 17:13:11 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-09-13 10:03:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT 
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS USERNAME,
+		UI.PASS_WORD AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS .[*]DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS  CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS USERSTATE,
+		UI.CREATE_DATE AS CREATEDATE
+	 
+		FROM USER_INFO
+		WHERE USER_NAME=? AND PASS_WORD=? AND DEL_STATE='F' "; expected "identifier"; SQL statement:
+select 
+		 
+		ui.user_id as userId,
+		ui.user_name as userName,
+		ui.pass_word as passWord,
+		ui.real_name as realName,
+		ui.describe_text as .describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as  corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as userState,
+		ui.create_date as createDate
+	 
+		from user_info
+		where user_name=? and pass_word=? and del_state='F' [42001-193]
+2017-09-13 10:04:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT 
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS USERNAME,
+		UI.PASS_WORD AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS .[*][*]DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS  CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS USERSTATE,
+		UI.CREATE_DATE AS CREATEDATE
+	 
+		FROM USER_INFO
+		WHERE USER_NAME='admin' AND PASS_WORD='21232f297a57a5a743894a0e4a801fc3' AND DEL_STATE='F'"; expected "identifier"; SQL statement:
+SELECT 
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS USERNAME,
+		UI.PASS_WORD AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS .[*]DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS  CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS USERSTATE,
+		UI.CREATE_DATE AS CREATEDATE
+	 
+		FROM USER_INFO
+		WHERE USER_NAME='admin' AND PASS_WORD='21232f297a57a5a743894a0e4a801fc3' AND DEL_STATE='F' [42001-193]
+2017-09-13 10:30:50 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "DATASET_INFOGROUP_INFO" not found; SQL statement:
+delete from dataset_infoGROUP_INFO [42102-193]
+2017-10-09 14:18:13 database: wrong user or password; user: "PAS-WEB"
+org.h2.message.DbException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.engine.Engine.openSession(Engine.java:104)
+	at org.h2.engine.Engine.openSession(Engine.java:176)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:154)
+	at org.h2.engine.Engine.createSession(Engine.java:137)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:349)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:115)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:99)
+	at org.h2.Driver.connect(Driver.java:69)
+	at org.h2.server.web.WebServer.getConnection(WebServer.java:735)
+	at org.h2.server.web.WebApp.login(WebApp.java:947)
+	at org.h2.server.web.WebApp.process(WebApp.java:210)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:169)
+	at org.h2.server.web.WebThread.process(WebThread.java:133)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.h2.jdbc.JdbcSQLException: Wrong user name or password [28000-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 19 more
+2017-10-09 15:14:38 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "undefined"; SQL statement:
+update user_info set del_state='T'
+		where
+		user_id=? [22018-193]
+2017-10-09 15:15:34 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "undefined"; SQL statement:
+update user_info set del_state='T'
+		where
+		user_id=? [22018-193]
+2017-10-09 15:16:00 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "undefined"; SQL statement:
+update user_info set del_state='T'
+		where
+		user_id=? [22018-193]
+2017-10-09 16:36:49 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "F"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=? and  user_state = 'F' [22018-193]
+2017-10-09 16:37:29 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "F"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=? and  user_state = 'F' [22018-193]
+2017-10-09 16:37:33 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "F"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=? and  user_state = 'F' [22018-193]
+2017-10-09 16:38:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=? and  user_state = 'F' [90012-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:81)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:164)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:109)
+	at org.h2.command.Command.executeQuery(Command.java:201)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:179)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-10-09 16:38:42 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS
+		USERNAME,
+		UI.PASS_WORD
+		AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS
+		CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS
+		USERSTATE,
+		UI.CREATE_DATE AS
+		CREATEDATE,
+		(SELECT GROUP_CONCAT(SELECT GI.GROUP_NAME FROM GROUP_INFO
+		GI WHERE GI.GROUP_ID=UGI.GROUP_ID ) FROM USER_GROUP_INFO UGI WHERE
+		UGI.USER_ID=UI.USER_ID) AS GROUPNAME,
+		(SELECT GROUP_CONCAT(UGI.GROUP_ID
+		) FROM USER_GROUP_INFO UGI WHERE UGI.USER_ID=UI.USER_ID) AS GROUPID
+	 
+		FROM USER_INFO UI WHERE USER_NAME=[*]‘’ AND  USER_STATE = 'F' "; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=‘’ and  user_state = 'F' [42000-193]
+2017-10-09 16:38:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS
+		USERNAME,
+		UI.PASS_WORD
+		AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS
+		CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS
+		USERSTATE,
+		UI.CREATE_DATE AS
+		CREATEDATE,
+		(SELECT GROUP_CONCAT(SELECT GI.GROUP_NAME FROM GROUP_INFO
+		GI WHERE GI.GROUP_ID=UGI.GROUP_ID ) FROM USER_GROUP_INFO UGI WHERE
+		UGI.USER_ID=UI.USER_ID) AS GROUPNAME,
+		(SELECT GROUP_CONCAT(UGI.GROUP_ID
+		) FROM USER_GROUP_INFO UGI WHERE UGI.USER_ID=UI.USER_ID) AS GROUPID
+	 
+		FROM USER_INFO UI WHERE USER_NAME=[*]‘’ AND  USER_STATE = 'F' "; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=‘’ and  user_state = 'F' [42000-193]
+2017-10-09 16:38:43 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS
+		USERNAME,
+		UI.PASS_WORD
+		AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS
+		CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS
+		USERSTATE,
+		UI.CREATE_DATE AS
+		CREATEDATE,
+		(SELECT GROUP_CONCAT(SELECT GI.GROUP_NAME FROM GROUP_INFO
+		GI WHERE GI.GROUP_ID=UGI.GROUP_ID ) FROM USER_GROUP_INFO UGI WHERE
+		UGI.USER_ID=UI.USER_ID) AS GROUPNAME,
+		(SELECT GROUP_CONCAT(UGI.GROUP_ID
+		) FROM USER_GROUP_INFO UGI WHERE UGI.USER_ID=UI.USER_ID) AS GROUPID
+	 
+		FROM USER_INFO UI WHERE USER_NAME=[*]‘’ AND  USER_STATE = 'F' "; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=‘’ and  user_state = 'F' [42000-193]
+2017-10-09 16:38:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS
+		USERNAME,
+		UI.PASS_WORD
+		AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS
+		CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS
+		USERSTATE,
+		UI.CREATE_DATE AS
+		CREATEDATE,
+		(SELECT GROUP_CONCAT(SELECT GI.GROUP_NAME FROM GROUP_INFO
+		GI WHERE GI.GROUP_ID=UGI.GROUP_ID ) FROM USER_GROUP_INFO UGI WHERE
+		UGI.USER_ID=UI.USER_ID) AS GROUPNAME,
+		(SELECT GROUP_CONCAT(UGI.GROUP_ID
+		) FROM USER_GROUP_INFO UGI WHERE UGI.USER_ID=UI.USER_ID) AS GROUPID
+	 
+		FROM USER_INFO UI WHERE USER_NAME=[*]‘’ AND  USER_STATE = 'F' "; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=‘’ and  user_state = 'F' [42000-193]
+2017-10-09 16:38:44 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		UI.USER_ID AS USERID,
+		UI.USER_NAME AS
+		USERNAME,
+		UI.PASS_WORD
+		AS PASSWORD,
+		UI.REAL_NAME AS REALNAME,
+		UI.DESCRIBE_TEXT AS DESCRIBETEXT,
+		UI.PHONE AS PHONE,
+		UI.EMAIL AS EMAIL,
+		UI.CORPORATE_NAME AS
+		CORPORATENAME,
+		UI.POSITION_NAME AS POSITIONNAME,
+		UI.JOB_NAME AS JOBNAME,
+		UI.ADDRESS AS ADDRESS,
+		UI.USER_STATE AS
+		USERSTATE,
+		UI.CREATE_DATE AS
+		CREATEDATE,
+		(SELECT GROUP_CONCAT(SELECT GI.GROUP_NAME FROM GROUP_INFO
+		GI WHERE GI.GROUP_ID=UGI.GROUP_ID ) FROM USER_GROUP_INFO UGI WHERE
+		UGI.USER_ID=UI.USER_ID) AS GROUPNAME,
+		(SELECT GROUP_CONCAT(UGI.GROUP_ID
+		) FROM USER_GROUP_INFO UGI WHERE UGI.USER_ID=UI.USER_ID) AS GROUPID
+	 
+		FROM USER_INFO UI WHERE USER_NAME=[*]‘’ AND  USER_STATE = 'F' "; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=‘’ and  user_state = 'F' [42000-193]
+2017-10-09 16:38:55 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "F"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where   user_state = 'F' [22018-193]
+2017-10-09 16:40:42 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "F"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui where user_name=? and  ui.user_state = 'F' [22018-193]
+2017-10-09 16:54:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM USER_INFO GROUP_INFO GROUP_INFO[*]"; SQL statement:
+SELECT * FROM USER_INFO GROUP_INFO GROUP_INFO [42000-193]
+2017-10-12 11:21:27 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT * FROM DATASET_INFO GROUP_INFO POWER_INFO[*] USER_GROUP_INFO USER_INFO PROJECT_INFO"; SQL statement:
+SELECT * FROM DATASET_INFO GROUP_INFO POWER_INFO USER_GROUP_INFO USER_INFO PROJECT_INFO [42000-193]
+2017-10-12 11:21:40 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "PROJECT_INFO[*]"; expected "PREPARE, {"; SQL statement:
+PROJECT_INFO [42001-193]
+2017-10-12 11:21:56 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Table "PROJECT_INFOUSER_GROUP_INFO" not found; SQL statement:
+select * from project_infoUSER_GROUP_INFO [42102-193]
+2017-10-12 17:24:46 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:25:53 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "guest1507800075250"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:26:06 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "guest1507800075250"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:26:29 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:27:30 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:29:08 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:30:12 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:35:44 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:35:48 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-12 17:37:13 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-13 13:19:06 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "NaN"; SQL statement:
+select
+		 
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	 
+		from user_info ui
+		where ui.user_id=? [22018-193]
+2017-10-13 14:54:09 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877636756"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 14:57:24 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877838383"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 14:58:34 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877908498"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 14:59:30 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877908498"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 15:03:34 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877908498"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 15:04:46 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877908498"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 15:07:27 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Numeric value out of range: "1507877908498"; SQL statement:
+insert into dataset_info (
+			dataset_id,file_name,file_type,file_size,dataset_path,model,industry,description,task_id,project_id,tag,creator,
+		) values (
+			?,?,?,?,?,?,
+			?,?,?,?,?,?
+		) -- (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12) [22003-193]
+2017-10-13 16:35:43 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Column "PI.ID" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (pi.del_state='F'
+		and (pi.is_share=2 or
+		pi.project_id in (select wi.control_id from power_info wi where
+		wi.effect_id=? and wi.control_type='project' and
+		effect_type='user') or pi.project_id in (select wi.control_id from
+		power_info wi where wi.effect_id in (select ugi.group_id from
+		user_group_info ugi where ugi.user_id=? ) and
+		wi.control_type='project' and
+		effect_type='group'))
+		and pi.creator   <>  
+		?) or (pi.id = 1); [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:131)
+	at org.h2.command.dml.Select.prepare(Select.java:856)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy146.prepareStatement(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy147.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:255)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy145.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy118.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy122.getProjectInfoListByShare(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.ProjectServiceImpl.getProjectInfoListByShare(ProjectServiceImpl.java:71)
+	at com.tarotdt.pas.web.controller.ProjectController.getProjectInfoListByShare(ProjectController.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2017-10-13 16:35:55 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Column "PI.ID" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (pi.del_state='F'
+		and (pi.is_share=2 or
+		pi.project_id in (select wi.control_id from power_info wi where
+		wi.effect_id=? and wi.control_type='project' and
+		effect_type='user') or pi.project_id in (select wi.control_id from
+		power_info wi where wi.effect_id in (select ugi.group_id from
+		user_group_info ugi where ugi.user_id=? ) and
+		wi.control_type='project' and
+		effect_type='group'))
+		and pi.creator   <>  
+		?) or (pi.id = 1); [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:131)
+	at org.h2.command.dml.Select.prepare(Select.java:856)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy146.prepareStatement(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy147.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:255)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy145.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy118.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy122.getProjectInfoListByShare(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.ProjectServiceImpl.getProjectInfoListByShare(ProjectServiceImpl.java:71)
+	at com.tarotdt.pas.web.controller.ProjectController.getProjectInfoListByShare(ProjectController.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2017-10-13 16:36:18 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Column "PI.ID" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (pi.del_state='F'
+		and (pi.is_share=2 or
+		pi.project_id in (select wi.control_id from power_info wi where
+		wi.effect_id=? and wi.control_type='project' and
+		effect_type='user') or pi.project_id in (select wi.control_id from
+		power_info wi where wi.effect_id in (select ugi.group_id from
+		user_group_info ugi where ugi.user_id=? ) and
+		wi.control_type='project' and
+		effect_type='group'))
+		and pi.creator   <>  
+		?) or (pi.id = 1); [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:131)
+	at org.h2.command.dml.Select.prepare(Select.java:856)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:287)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.tomcat.jdbc.pool.ProxyConnection.invoke(ProxyConnection.java:126)
+	at org.apache.tomcat.jdbc.pool.JdbcInterceptor.invoke(JdbcInterceptor.java:108)
+	at org.apache.tomcat.jdbc.pool.DisposableConnectionFacade.invoke(DisposableConnectionFacade.java:81)
+	at com.sun.proxy.$Proxy146.prepareStatement(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.logging.jdbc.ConnectionLogger.invoke(ConnectionLogger.java:55)
+	at com.sun.proxy.$Proxy147.prepareStatement(Unknown Source)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.instantiateStatement(PreparedStatementHandler.java:87)
+	at org.apache.ibatis.executor.statement.BaseStatementHandler.prepare(BaseStatementHandler.java:88)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.prepare(RoutingStatementHandler.java:59)
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:85)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:83)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.ibatis.plugin.Invocation.proceed(Invocation.java:49)
+	at com.github.pagehelper.SqlUtil._processPage(SqlUtil.java:401)
+	at com.github.pagehelper.SqlUtil.processPage(SqlUtil.java:374)
+	at com.github.pagehelper.PageHelper.intercept(PageHelper.java:255)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy145.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:434)
+	at com.sun.proxy.$Proxy118.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:231)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:128)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:68)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53)
+	at com.sun.proxy.$Proxy122.getProjectInfoListByShare(Unknown Source)
+	at com.tarotdt.pas.web.service.impl.ProjectServiceImpl.getProjectInfoListByShare(ProjectServiceImpl.java:71)
+	at com.tarotdt.pas.web.controller.ProjectController.getProjectInfoListByShare(ProjectController.java:101)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:861)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:622)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:729)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:230)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.web.filter.ApplicationContextHeaderFilter.doFilterInternal(ApplicationContextHeaderFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.trace.WebRequestTraceFilter.doFilterInternal(WebRequestTraceFilter.java:105)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.springframework.boot.actuate.autoconfigure.MetricsFilter.doFilterInternal(MetricsFilter.java:107)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:192)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:165)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:198)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:108)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:79)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:349)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:784)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:802)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1410)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Unknown Source)
+2017-10-13 16:36:40 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Column "PI.ID" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (pi.del_state='F'
+		and (pi.is_share=2 or
+		pi.project_id in (select wi.control_id from power_info wi where
+		wi.effect_id=? and wi.control_type='project' and
+		effect_type='user') or pi.project_id in (select wi.control_id from
+		power_info wi where wi.effect_id in (select ugi.group_id from
+		user_group_info ugi where ugi.user_id=? ) and
+		wi.control_type='project' and
+		effect_type='group'))
+		and pi.creator   <>  
+		?) or (pi.id = 1) [42122-193]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:147)
+	at org.h2.expression.Comparison.optimize(Comparison.java:178)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:131)
+	at org.h2.command.dml.Select.prepare(Select.java:856)
+	at org.h2.command.Parser.prepareCommand(Parser.java:259)
+	at org.h2.engine.Session.prepareLocal(Session.java:561)
+	at org.h2.engine.Session.prepareCommand(Session.java:502)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1203)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1380)
+	at org.h2.server.web.WebApp.query(WebApp.java:1053)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1015)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1002)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Unknown Source)
+2017-10-19 09:12:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DATASET_INFO[*]"; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DATASET_INFO [42001-193]
+2017-10-27 10:32:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:32:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:32:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:32:46 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:33:01 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:33:01 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:34:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:34:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:34:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:34:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL
+		(FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] (
+		?,
+		?,
+		?,
+		?) "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model
+		(full_model_id,name,user_id,enable) value (
+		?,
+		?,
+		?,
+		?) [42001-193]
+2017-10-27 10:35:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO COLLECTION_MODEL (FULL_MODEL_ID,NAME,USER_ID,ENABLE) VALUE[*] ( 'test','test',111, '1') "; expected "DIRECT, SORTED, DEFAULT, VALUES, SET, (, WITH, SELECT, FROM"; SQL statement:
+insert into collection_model (full_model_id,name,user_id,enable) value ( 'test','test',111, '1') [42001-193]
+2017-10-27 10:39:54 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "      
+CREATE TABLE ""COLLECTION_MODEL"" (
+""ID"" INT(32)  PRIMARY KEY AUTO_INCREMENT,,[*]
+""NAME"" VARCHAR(200) NOT NULL COMMENT 'NAME',
+""FULL_MODEL_ID"" VARCHAR(200) NOT NULL COMMENT 'modelId',
+""USER_ID"" INT(11) NOT NULL COMMENT '用户Id',
+""ENABLE"" VARCHAR(20) NOT NULL DEFAULT '1' COMMENT '是否正常，没被删除',
+""COLLECTION_DATE""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+) "; expected "identifier"; SQL statement:
+--模型收藏
+CREATE TABLE `COLLECTION_MODEL` (
+`ID` int(32)  primary key auto_increment,,
+`NAME` varchar(200) NOT NULL COMMENT 'NAME',
+`FULL_MODEL_ID` varchar(200) NOT NULL COMMENT 'modelId',
+`USER_ID` int(11) NOT NULL COMMENT '用户Id',
+`ENABLE` varchar(20) NOT NULL default '1' COMMENT '是否正常，没被删除',
+`COLLECTION_DATE`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+) [42001-193]
+2017-10-27 10:40:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "COLLECTION_MODEL" not found; SQL statement:
+DROP TABLE COLLECTION_MODEL [42102-193]
+2017-10-27 10:40:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""COLLECTION_MODEL"" (
+""ID"" INT(32)  PRIMARY KEY AUTO_INCREMENT,,[*]
+""NAME"" VARCHAR(200) NOT NULL COMMENT 'NAME',
+""FULL_MODEL_ID"" VARCHAR(200) NOT NULL COMMENT 'modelId',
+""USER_ID"" INT(11) NOT NULL COMMENT '用户Id',
+""ENABLE"" VARCHAR(20) NOT NULL DEFAULT '1' COMMENT '是否正常，没被删除',
+""COLLECTION_DATE""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+) "; expected "identifier"; SQL statement:
+CREATE TABLE `COLLECTION_MODEL` (
+`ID` int(32)  primary key auto_increment,,
+`NAME` varchar(200) NOT NULL COMMENT 'NAME',
+`FULL_MODEL_ID` varchar(200) NOT NULL COMMENT 'modelId',
+`USER_ID` int(11) NOT NULL COMMENT '用户Id',
+`ENABLE` varchar(20) NOT NULL default '1' COMMENT '是否正常，没被删除',
+`COLLECTION_DATE`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+) [42001-193]
+2017-10-27 10:40:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE ""COLLECTION_MODEL"" (
+""ID"" INT(32)  PRIMARY KEY AUTO_INCREMENT,,[*]
+""NAME"" VARCHAR(200) NOT NULL COMMENT 'NAME',
+""FULL_MODEL_ID"" VARCHAR(200) NOT NULL COMMENT 'modelId',
+""USER_ID"" INT(11) NOT NULL COMMENT '用户Id',
+""ENABLE"" VARCHAR(20) NOT NULL DEFAULT '1' COMMENT '是否正常，没被删除',
+""COLLECTION_DATE""  TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+) "; expected "identifier"; SQL statement:
+CREATE TABLE `COLLECTION_MODEL` (
+`ID` int(32)  primary key auto_increment,,
+`NAME` varchar(200) NOT NULL COMMENT 'NAME',
+`FULL_MODEL_ID` varchar(200) NOT NULL COMMENT 'modelId',
+`USER_ID` int(11) NOT NULL COMMENT '用户Id',
+`ENABLE` varchar(20) NOT NULL default '1' COMMENT '是否正常，没被删除',
+`COLLECTION_DATE`  timestamp NOT NULL default CURRENT_TIMESTAMP COMMENT '创建时间',
+) [42001-193]
+2017-10-27 11:24:12 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP POWER_INFO[*] IF EXITS "; expected "TABLE, INDEX, USER, SEQUENCE, CONSTANT, TRIGGER, VIEW, ROLE, ALIAS, SCHEMA, ALL, DOMAIN, TYPE, DATATYPE, AGGREGATE"; SQL statement:
+drop power_info if exits [42001-193]
+2017-10-27 11:24:25 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE POWER_INFO IF EXITS[*] "; expected "EXISTS"; SQL statement:
+drop table power_info if exits [42001-193]
+2017-10-27 11:24:32 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE POWER_INFO IF EXITS[*] "; expected "EXISTS"; SQL statement:
+drop table power_info if exits [42001-193]
+2017-10-27 11:24:37 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE POWER_INFO IF EXSIT[*] "; expected "EXISTS"; SQL statement:
+drop table power_info if exsit [42001-193]
+2017-10-27 11:25:02 jdbc[14]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DROP TABLE POWER_INFO IF EXIST[*] "; expected "EXISTS"; SQL statement:
+drop table power_info if exist [42001-193]
+2017-10-27 18:08:24 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "POWER_INFO" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (del_state='F'
+		and creator=?) [42102-193]
+2017-10-27 18:08:39 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "POWER_INFO" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (del_state='F'
+		and creator=?) [42102-193]
+2017-10-27 18:09:13 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "POWER_INFO" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (del_state='F'
+		and creator=?) [42102-193]
+2017-10-27 18:12:20 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "POWER_INFO" not found; SQL statement:
+select
+		 
+		pi.project_id as projectId,
+		pi.project_number as
+		projectNumber,
+		pi.project_name as projectName,
+		pi.describe_text as
+		describeText,
+		pi.is_share as isShare,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select count(di.dataset_id) from
+		dataset_info di where di.project_id=pi.project_id) as countDateset,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='user') as countUser,
+		(select count(wi.power_id) from power_info wi where wi.control_type='project' and wi.control_id=pi.project_id and wi.effect_type='group') as countGroup,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from project_info pi
+		where (del_state='F'
+		and creator=?) [42102-193]
+2017-10-27 18:57:38 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ID ,
+		FULL_MODEL_ID AS FULLMODELID,NAME,USER_ID AS USERID,COLLECTION_DATE
+		COLLECTIONDATE,PROJECT_ID PROJECTID,DATA_SET_ID DATASETID,TASK_ID TASKID  ENABLE[*] FROM COLLECTION_MODEL WHERE
+		USER_ID = ? AND FULL_MODEL_ID = ? AND 
+		ENABLE != '0' "; SQL statement:
+select id ,
+		full_model_id as fullModelId,name,user_id as userId,collection_date
+		collectionDate,project_id projectId,data_set_id datasetId,task_id taskId  enable from collection_model where
+		user_id = ? and full_model_id = ? and 
+		enable != '0' [42000-193]
+2017-10-27 19:05:33 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ID ,
+		FULL_MODEL_ID AS FULLMODELID,NAME,USER_ID AS USERID,COLLECTION_DATE
+		COLLECTIONDATE,PROJECT_ID PROJECTID,DATA_SET_ID DATASETID,TASK_ID TASKID  ENABLE[*] FROM COLLECTION_MODEL WHERE
+		USER_ID = ? AND FULL_MODEL_ID = ? AND 
+		ENABLE != '0' "; SQL statement:
+select id ,
+		full_model_id as fullModelId,name,user_id as userId,collection_date
+		collectionDate,project_id projectId,data_set_id datasetId,task_id taskId  enable from collection_model where
+		user_id = ? and full_model_id = ? and 
+		enable != '0' [42000-193]
+2017-10-30 13:22:30 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ID ,
+		FULL_MODEL_ID AS FULLMODELID,NAME,USER_ID AS USERID,COLLECTION_DATE
+		COLLECTIONDATE,PROJECT_ID PROJECTID,DATA_SET_ID DATASETID,TASK_ID TASKID  ENABLE[*] FROM COLLECTION_MODEL WHERE
+		USER_ID = ? AND FULL_MODEL_ID = ? AND 
+		ENABLE != '0' "; SQL statement:
+select id ,
+		full_model_id as fullModelId,name,user_id as userId,collection_date
+		collectionDate,project_id projectId,data_set_id datasetId,task_id taskId  enable from collection_model where
+		user_id = ? and full_model_id = ? and 
+		enable != '0' [42000-193]
+2017-10-30 13:22:46 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ID ,
+		FULL_MODEL_ID AS FULLMODELID,NAME,USER_ID AS USERID,COLLECTION_DATE
+		COLLECTIONDATE,PROJECT_ID PROJECTID,DATA_SET_ID DATASETID,TASK_ID TASKID  ENABLE[*] FROM COLLECTION_MODEL WHERE
+		USER_ID = ? AND FULL_MODEL_ID = ? AND 
+		ENABLE != '0' "; SQL statement:
+select id ,
+		full_model_id as fullModelId,name,user_id as userId,collection_date
+		collectionDate,project_id projectId,data_set_id datasetId,task_id taskId  enable from collection_model where
+		user_id = ? and full_model_id = ? and 
+		enable != '0' [42000-193]
+2017-11-02 09:12:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "DATASET_INFO[*]"; expected "DELETE, DROP, DECLARE, DEALLOCATE, {"; SQL statement:
+DATASET_INFO [42001-193]
+2017-12-12 16:00:42 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? "; SQL statement:
+select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ? [42000-196]
+2017-12-12 16:00:46 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? "; SQL statement:
+select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ? [42000-196]
+2017-12-12 16:01:11 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? "; SQL statement:
+select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ? [42000-196]
+2017-12-12 16:01:46 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? "; SQL statement:
+select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ? [42000-196]
+2017-12-12 16:02:15 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? "; SQL statement:
+select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ? [42000-196]
+2017-12-12 16:04:04 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT COUNT(0) FROM (SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ?) TMP_COUNT "; expected ",, FROM, WHERE, GROUP, HAVING, UNION, MINUS, EXCEPT, INTERSECT, ORDER, OFFSET, FETCH, LIMIT, FOR, )"; SQL statement:
+select count(0) from (select
+		 
+		pi.id as id,
+		pi.fullModelId as fullModelId
+		pi.model_Name as modelName,
+		pi.creator as creator,
+		pi.create_date as createDate,
+		(select ui.user_name from user_info ui where ui.user_id=pi.creator) as
+		creatorName
+	 
+		from model_deploy pi
+		where 1=1 
+		 
+			and pi.creator = ?) tmp_count [42001-196]
+2017-12-12 16:05:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*][*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ?"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = ? [42000-196]
+2017-12-12 16:05:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*][*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1 [42000-196]
+2017-12-12 16:05:08 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*][*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1 [42000-196]
+2017-12-12 16:05:09 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*][*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1 [42000-196]
+2017-12-12 16:05:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*][*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1 [42000-196]
+2017-12-12 16:05:30 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID,
+		PI[*[*]].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1"; expected "NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
+SELECT
+		 
+		PI.ID AS ID,
+		PI.FULLMODELID AS FULLMODELID,
+		PI[*].MODEL_NAME AS MODELNAME,
+		PI.CREATOR AS CREATOR,
+		PI.CREATE_DATE AS CREATEDATE,
+		(SELECT UI.USER_NAME FROM USER_INFO UI WHERE UI.USER_ID=PI.CREATOR) AS
+		CREATORNAME
+	 
+		FROM MODEL_DEPLOY PI
+		WHERE 1=1 
+		 
+			AND PI.CREATOR = 1 [42001-196]
+2017-12-25 13:50:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GROUP_INFO[*]"; expected "GRANT, {"; SQL statement:
+GROUP_INFO [42001-196]
+2017-12-25 13:50:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "GROUP_INFO[*]"; expected "GRANT, {"; SQL statement:
+GROUP_INFO [42001-196]
+2017-12-25 13:55:12 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE `test_info` (
+`GROUP_ID`  int(11)  primary key ,
+DEL_STATE[*]`  varchar(16) NOT NULL COMMENT '是否删除' 
+)"; SQL statement:
+CREATE TABLE `test_info` (
+`GROUP_ID`  int(11)  primary key ,
+DEL_STATE`  varchar(16) NOT NULL COMMENT '是否删除' 
+) [42000-196]
+2017-12-25 13:57:27 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE 'test_info'[*]
+(
+    ID INT PRIMARY KEY,
+    NAME NVARCHAR(100) NOT NULL
+) "; expected "identifier"; SQL statement:
+create table 'test_info'
+(
+    id int primary key,
+    name nvarchar(100) not null
+) [42001-196]

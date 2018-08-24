@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tarotdt.pas.web.mapper.UserMapper">
+
+<!-- 	<cache type="org.mybatis.caches.ehcache.LoggingEhcache">
+    	<property name="timeToIdleSeconds" value="3600"/>
+    	<property name="timeToLiveSeconds" value="3600"/>
+    	<property name="maxEntriesLocalHeap" value="1000"/>
+    	<property name="maxEntriesLocalDisk" value="10000000"/>
+    	<property name="memoryStoreEvictionPolicy" value="LRU"/>
+	</cache>
+ -->
+	<resultMap type="com.tarotdt.pas.web.model.UserInfoModel"
+		id="userModel">
+		<id column="userId" property="userId" />
+		<result column="userName" property="userName" />
+		<result column="password" property="password" />
+		<result column="realName" property="realName" />
+		<result column="describeText" property="describeText" />
+		<result column="phone" property="phone" />
+		<result column="email" property="email" />
+		<result column="corporateName" property="corporateName" />
+		<result column="positionName" property="positionName" />
+		<result column="jobName" property="jobName" />
+		<result column="address" property="address" />
+		<result column="userState" property="userState" />
+		<result column="createDate" property="createDate" javaType="java.util.Date" />
+		<result column="groupName" property="groupNameList" />
+		<result column="groupId" property="groupIdList" />
+	</resultMap>
+	
+	<resultMap type="com.tarotdt.pas.web.model.UserInfoModel"
+		id="userPowerModel">
+		<id column="userId" property="userId" />
+		<result column="userName" property="userName" />
+		<result column="password" property="password" />
+		<result column="realName" property="realName" />
+		<result column="describeText" property="describeText" />
+		<result column="phone" property="phone" />
+		<result column="email" property="email" />
+		<result column="corporateName" property="corporateName" />
+		<result column="positionName" property="positionName" />
+		<result column="jobName" property="jobName" />
+		<result column="address" property="address" />
+		<result column="userState" property="userState" />
+		<result column="createDate" property="createDate" javaType="java.util.Date" />
+		<result column="groupName" property="groupNameList" />
+		<result column="groupId" property="groupIdList" />
+		<result column="powerId" property="powerId" />
+	</resultMap>
+
+	<sql id="userColumns">
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId
+	</sql>
+	
+	<sql id="userPowerColumns">
+		ui.user_id as userId,
+		ui.user_name as
+		userName,
+		ui.pass_word
+		as password,
+		ui.real_name as realName,
+		ui.describe_text as describeText,
+		ui.phone as phone,
+		ui.email as email,
+		ui.corporate_name as
+		corporateName,
+		ui.position_name as positionName,
+		ui.job_name as jobName,
+		ui.address as address,
+		ui.user_state as
+		userState,
+		ui.create_date as
+		createDate,
+		(select GROUP_CONCAT(select gi.group_name from group_info
+		gi where gi.group_id=ugi.group_id ) from user_group_info ugi where
+		ugi.user_id=ui.user_id) as groupName,
+		(select GROUP_CONCAT(ugi.group_id
+		) from user_group_info ugi where ugi.user_id=ui.user_id) as groupId,
+		wi.power_id as powerId
+	</sql>
+
+	<!-- 用户表存储 -->
+	<insert id="saveUserInfo" parameterType="com.tarotdt.pas.web.model.UserInfoModel">
+		insert into user_info (
+		user_id,
+		user_name,pass_word,real_name,describe_text,phone,email,corporate_name,position_name,job_name,address
+		) values (
+		#{userId},
+		#{userName,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR},#{realName,jdbcType=VARCHAR},#{describeText,jdbcType=VARCHAR},#{phone,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR},#{corporateName,jdbcType=VARCHAR},#{positionName,jdbcType=VARCHAR},#{jobName,jdbcType=VARCHAR},#{address,jdbcType=VARCHAR}
+		)
+	</insert>
+
+	<!-- 用户登陆 -->
+	<select id="login" resultMap="userModel">
+		select
+		<include refid="userColumns" />
+		from user_info ui
+		where ui.user_name=#{userName} and
+		ui.pass_word=#{password} and ui.del_state='F'
+	</select>
+
+	<!-- 查询用户列表 -->
+	<select id="getUserInfoList" resultMap="userModel">
+		select
+		<include refid="userColumns" />
+		from user_info ui
+		where  ui.del_state='F'
+		<if test="userName!=null">
+			and ui.user_name like
+			concat(concat('%',#{userName}),'%')
+		</if>
+	</select>
+
+	<!-- 修改密码 -->
+	<update id="updatePassWord">
+		update user_info set pass_word=#{password}
+		where user_id=#{userId}
+	</update>
+
+	<!-- 删除用户 -->
+	<update id="deleteUserinfo">
+		update user_info set del_state='T'
+		where
+		user_id=#{userId}
+	</update>
+	
+	<!-- 删除用户 -->
+	<update id="deleteAllUserinfo">
+		delete from user_info
+	</update>
+	
+
+	<!-- 修改用户 -->
+	<update id="updateUserInfo" parameterType="com.tarotdt.pas.web.model.UserInfoModel">
+		update user_info
+		set 
+		user_name = #{userName},
+		real_name=#{realName},describe_text=#{describeText},phone=#{phone},email=#{email},corporate_name=#{corporateName},
+		position_name=#{positionName},job_name=#{jobName},address=#{address},operator=#{operator},update_date=CURRENT_TIMESTAMP
+		where user_id=#{userId}
+	</update>
+
+	<!-- 修改用户状态 -->
+	<update id="updateUserInfoState">
+		update user_info set user_state=#{userState}
+		where
+		user_id=#{userId}
+	</update>
+
+	<!-- 根据用户id及密码验证用户 -->
+	<select id="verificationPassWord" resultMap="userModel">
+		select
+		<include refid="userColumns" />
+		from user_info ui
+		where ui.user_id=#{userId} and pass_word=#{password}
+	</select>
+
+	<!-- 根据用户id查询用户详细信息 -->
+	<select id="getUserInfoById" resultMap="userModel">
+		select
+		<include refid="userColumns" />
+		from user_info ui
+		where ui.user_id=#{userId}
+	</select>
+	
+	<!-- 删除组用户关联表数据 -->
+	<delete id="deleteUserGroupInfoByUserId">
+		delete from user_group_info where group_id=#{userId}
+	</delete>
+	
+	<!--删除权限用户关联表数据 -->
+	<delete id="deletePowerInfoByUserId">
+		delete from power_info where effect_type='user' and  effect_id=#{userId}
+	</delete>
+	
+	<!-- 根据项目id查询共享用户 -->
+	<select id="getShareUserListByProjectId" resultMap="userPowerModel">
+		select 
+		<include refid="userPowerColumns" />
+		from power_info wi
+		left join user_info ui on wi.effect_id=ui.user_id
+		where wi.effect_type='user' and wi.control_type='project' and wi.control_id=#{projectId}
+	</select>
+	
+	<select id="verificationUserName" resultMap="userModel">
+		select
+		<include refid="userColumns"/>
+		from user_info ui where user_name=#{userName} and  del_state='F'
+	</select>
+</mapper>

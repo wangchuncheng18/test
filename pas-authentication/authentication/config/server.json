@@ -1,0 +1,14 @@
+{
+  "remappedConnections": {},
+  "auditLog": {
+    "logAuthFailures": false,
+    "logQueries": false
+  },
+  "endpointDefaults": {
+    "ceil": 8,
+    "floor": 1,
+    "cruise": 2,
+    "queue": 16,
+    "timeout": 10000
+  }
+}

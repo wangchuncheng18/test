@@ -1,0 +1,22 @@
+{
+  "connections": {
+    "filesystem_root": {
+      "params": {
+        "root": "/",
+        "forcePathsOnDatasetsImport": true
+      },
+      "type": "Filesystem",
+      "allowWrite": false,
+      "allowManagedDatasets": false,
+      "useGlobalProxy": true,
+      "maxActivities": 0,
+      "credentialsMode": "GLOBAL",
+      "usableBy": "ALL",
+      "allowedGroups": [],
+      "detailsReadability": {
+        "readableBy": "NONE",
+        "allowedGroups": []
+      }
+    }
+  }
+}

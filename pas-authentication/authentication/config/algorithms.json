@@ -1,0 +1,69 @@
+{
+    "algorithms": {
+        "RandomForestClassifier": {
+            "checkpointInterval": 10,
+            "featureSubsetStrategy": "auto",
+            "impurity": [
+                "gini",
+                "entropy"
+            ],
+            "maxBins": 32,
+            "maxDepth": 5,
+            "minInfoGain": 0,
+            "minInstancesPerNode": 1,
+            "numTrees": [
+                21,
+                5,
+                7,
+                9,
+                11,
+                13,
+                15,
+                17,
+                19,
+                23
+            ],
+            "subsamplingRate": 1,
+            "cacheNodeIds": false,
+            "maxMemoryInMB": 256
+        },
+        "NaiveBayes": {
+            "modelType": [
+                "multinomial",
+                "bernoulli"
+            ],
+            "smoothing": [
+                1,
+                0.8,
+                0.6,
+                0.4,
+                0.2
+            ]
+        },
+        "RandomForestRegressor": {
+            "checkpointInterval": 10,
+            "featureSubsetStrategy": "auto",
+            "impurity": "variance",
+            "maxBins": 32,
+            "maxDepth": 5,
+            "minInfoGain": 0,
+            "minInstancesPerNode": 1,
+            "numTrees": [
+                21,
+                5,
+                7,
+                9,
+                11,
+                13,
+                15,
+                17,
+                19,
+                23,
+                25
+            ],
+            "subsamplingRate": 1,
+            "cacheNodeIds": false,
+            "maxMemoryInMB": 256
+        }
+    }
+}
